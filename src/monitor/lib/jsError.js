@@ -19,7 +19,6 @@ export function injectJsError() {
           tagName: event.target.tagName, // SCRIPT
           selector: getSelector(event), // 代表最后一个操作的元素
         };
-        console.log(log);
         tracker.send(log);
       } else {
         let log = {
@@ -32,7 +31,6 @@ export function injectJsError() {
           stack: getLines(event.error.stack),
           selector: lastEvent ? getSelector(lastEvent) : '', // 代表最后一个操作的元素
         };
-        console.log(log);
         tracker.send(log);
       }
     },
@@ -72,7 +70,6 @@ export function injectJsError() {
         stack,
         selector: lastEvent ? getSelector(lastEvent) : '', // 代表最后一个操作的元素
       };
-      console.log(log);
       tracker.send(log);
     },
     true
