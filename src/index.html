@@ -9,12 +9,12 @@
   <body>
     <div id="container">
       <div class="content main">
-        <input id="errorBtn" type="button" value="点击抛出错误" onclick="errorClick()" />
-        <input id="promiseErrorBtn" type="button" value="点击抛出Promise错误" onclick="promiseErrorClick()" />
+        <!-- <input id="errorBtn" type="button" value="点击抛出错误" onclick="errorClick()" /> -->
+        <!-- <input id="promiseErrorBtn" type="button" value="点击抛出Promise错误" onclick="promiseErrorClick()" /> -->
       </div>
-      <div class="content main">
-        <input id="requestSuccessBtn" type="button" value="ajax成功请求" onclick="sendSuccess()" />
-        <input id="requestErrorBtn" type="button" value="ajax失败请求" onclick="sendError()" />
+      <div class="content main" style="width: 200px; height: 200px; background-color: antiquewhite">
+        <!-- <input id="requestSuccessBtn" type="button" value="ajax成功请求" onclick="sendSuccess()" /> -->
+        <!-- <input id="requestErrorBtn" type="button" value="ajax失败请求" onclick="sendError()" /> -->
       </div>
     </div>
     <script>
@@ -52,6 +52,14 @@
         };
         xhr.send('name=jpgs');
       }
+
+      setTimeout(() => {
+        let content = document.getElementsByClassName('content')[0];
+        let h1 = document.createElement('h1');
+        h1.innerHTML = '我是这个页面中最有意义的内容';
+        h1.setAttribute('elementtiming', 'meaningful');
+        content.appendChild(h1);
+      }, 2000);
     </script>
     <script defer type="text/javascript" src="js/someError.js"></script>
   </body>
